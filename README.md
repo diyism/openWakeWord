@@ -1,5 +1,26 @@
     Try to make openWakeWord to train mono-syllable wake word
 
+    data.py 里 CMUDICT 元音与其 IPA 对应（也称 dj 音标）的映射：
+    • AA → /ɑ/ （如 “father” 中的ɑ）
+    • AE → /æ/ （如 “cat” 中的æ）
+    • AH → /ʌ/ 或 /ə/ （依环境而定，如 “but” 中通常读 /ʌ/，弱读时可为 /ə/）
+    • AO → /ɔ/ （如 “talk” 中的ɔ）
+    • AW → /aʊ/ （双元音，如 “cow” 中的 aʊ）
+    • AX → /ə/ （非重读中央元音，即弱读音）
+    • AXR → /ɚ/ （带 r 色的弱读元音，如 “butter” 中美式发音）
+    • AY → /aɪ/ （双元音，如 “mine” 中的 aɪ）
+    • EH → /ɛ/ （如 “dress” 中的ɛ）
+    • ER → /ɝ/ （含 r 色的元音，如 “bird” 的发音）
+    • EY → /eɪ/ （双元音，如 “bait” 中的 eɪ）
+    • IH → /ɪ/ （如 “kit” 中的ɪ）
+    • IX → 通常视为 /ɪ/ 的变体
+    • IY → /i/ （如 “fleece” 中的 i）
+    • OW → /oʊ/ （双元音，如 “goat” 中的 oʊ）
+    • OY → /ɔɪ/ （双元音，如 “choice” 中的 ɔɪ）
+    • UH → /ʊ/ （如 “foot” 中的ʊ）
+    • UW → /u/ （如 “goose” 中的u）
+    • UX → 在部分文献中作为 /ʉ/ 或其他后圆唇元音的变体
+
 ![Github CI](https://github.com/dscripka/openWakeWord/actions/workflows/tests.yml/badge.svg)
 
 # openWakeWord
