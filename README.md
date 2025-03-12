@@ -1,4 +1,4 @@
-    Try to make openWakeWord to train mono-syllable wake word:
+    modified openWakeWord to train mono-syllable wake word in google colab:
     https://github.com/diyism/openWakeWord/blob/main/notebooks/automatic_model_training_simple.ipynb
 
     after finished training and donwloaded model files:
