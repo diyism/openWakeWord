@@ -1,4 +1,5 @@
-    Try to make openWakeWord to train mono-syllable wake word
+    Try to make openWakeWord to train mono-syllable wake word:
+    https://github.com/diyism/openWakeWord/blob/main/notebooks/automatic_model_training_simple.ipynb
 
     data.py 里 CMUDICT 元音与其 IPA 对应（也称 dj 音标）的映射：
     • AA → /ɑ/ （如 “father” 中的ɑ）
