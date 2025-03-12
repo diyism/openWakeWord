@@ -962,10 +962,11 @@ def generate_adversarial_texts(input_text: str, N: int, include_partial_phrase: 
         query_exps = []
         phones = phones.split()
         adversarial_words = []
-        if len(phones) <= 2:
-            query_exps.append(" ".join(phones))
-        else:
-            query_exps.extend(phoneme_replacement(phones, max_replace=max(0, len(phones)-2), replace_char="(.){1,3}"))
+        #if len(phones) <= 2:
+        #    query_exps.append(" ".join(phones))
+        #else:
+        #    query_exps.extend(phoneme_replacement(phones, max_replace=max(0, len(phones)-2), replace_char="(.){1,3}"))
+        query_exps.extend(phoneme_replacement(phones, max_replace=len(phones), replace_char="(.){1,3}"))
 
         for query in query_exps:
             matches = pronouncing.search(query)
