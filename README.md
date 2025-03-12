@@ -9,10 +9,10 @@
     # if conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
     $ subl ~/.local/lib/python3.10/site-packages/openwakeword/__init__.py
     # add following into __init__.py/MODELS:
-    "1.hay": {
+    "1": {
         "model_path": os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources/models/hay.tflite")
     },"
-    # the model name has fixed in the model file, it's not defined by the index of "1.hay"
+    # the model name has fixed in the model file, it's not defined by the index of "1" and not defined by the model file name
     $ python examples/detect_from_microphone.py --model_path=hay,alexa
 
     data.py 里 CMUDICT 元音与其 IPA 对应（也称 dj 音标）的映射：
