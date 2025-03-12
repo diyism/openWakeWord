@@ -967,11 +967,12 @@ def generate_adversarial_texts(input_text: str, N: int, include_partial_phrase: 
         #else:
         #    query_exps.extend(phoneme_replacement(phones, max_replace=max(0, len(phones)-2), replace_char="(.){1,3}"))
         query_exps.extend(phoneme_replacement(phones, max_replace=len(phones), replace_char="(.){1,3}"))
+        print(query_exps)
 
         for query in query_exps:
             matches = pronouncing.search(query)
             matches_phones = [pronouncing.phones_for_word(i)[0] for i in matches]
-            allowed_matches = [i for i, j in zip(matches, matches_phones) if j != phones]
+            allowed_matches = [i for i, j in zip(matches, matches_phones) if j != phones and pronouncing.syllable_count(j) == 1]
             adversarial_words.extend([i for i in allowed_matches if word.lower() != i])
 
         if adversarial_words != []:
