@@ -7,7 +7,12 @@
     $ cd openWakeWord
     $ mv ~/Downloads/hay.tflite ~/.local/lib/python3.10/site-packages/openwakeword/resources/models/
     # if conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
-    $ python examples/detect_from_microphone.py
+    $ subl ~/.local/lib/python3.10/site-packages/openwakeword/__init__.py
+    # add following into __init__.py/MODELS:
+    "hay": {
+        "model_path": os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources/models/hay.tflite")
+    },"
+    $ python examples/detect_from_microphone.py --model_path=hay
 
     data.py 里 CMUDICT 元音与其 IPA 对应（也称 dj 音标）的映射：
     • AA → /ɑ/ （如 “father” 中的ɑ）
