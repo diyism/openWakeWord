@@ -1,6 +1,14 @@
     Try to make openWakeWord to train mono-syllable wake word:
     https://github.com/diyism/openWakeWord/blob/main/notebooks/automatic_model_training_simple.ipynb
 
+    after finished training and donwloaded model files:
+    $ pip install openwakeword
+    $ git clone https://github.com/diyism/openWakeWord
+    $ cd openWakeWord
+    $ mv ~/Downloads/hay.tflite ~/.local/lib/python3.10/site-packages/openwakeword/resources/models/
+    # if conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
+    $ python examples/detect_from_microphone.py
+
     data.py 里 CMUDICT 元音与其 IPA 对应（也称 dj 音标）的映射：
     • AA → /ɑ/ （如 “father” 中的ɑ）
     • AE → /æ/ （如 “cat” 中的æ）
