@@ -665,7 +665,7 @@ if __name__ == '__main__':
         if not os.path.exists(positive_train_output_dir):
             os.mkdir(positive_train_output_dir)
         n_current_samples = len(os.listdir(positive_train_output_dir))
-        if n_current_samples+3< config["n_samples"]:
+        if n_current_samples-3 < config["n_samples"]:
             generate_samples(
                 text=config["target_phrase"], max_samples=config["n_samples"]-n_current_samples,
                 batch_size=config["tts_batch_size"],
@@ -682,7 +682,7 @@ if __name__ == '__main__':
         if not os.path.exists(positive_test_output_dir):
             os.mkdir(positive_test_output_dir)
         n_current_samples = len(os.listdir(positive_test_output_dir))
-        if n_current_samples <= 0.95*config["n_samples_val"]:
+        if n_current_samples-3 < config["n_samples_val"]:
             generate_samples(text=config["target_phrase"], max_samples=config["n_samples_val"]-n_current_samples,
                              batch_size=config["tts_batch_size"],
                              noise_scales=[1.0], noise_scale_ws=[1.0], length_scales=[0.75, 1.0, 1.25],
@@ -696,7 +696,7 @@ if __name__ == '__main__':
         if not os.path.exists(negative_train_output_dir):
             os.mkdir(negative_train_output_dir)
         n_current_samples = len(os.listdir(negative_train_output_dir))
-        if n_current_samples <= 0.95*config["n_samples"]:
+        if n_current_samples-3 < config["n_samples"]:
             adversarial_texts = config["custom_negative_phrases"]
             for target_phrase in config["target_phrase"]:
                 adversarial_texts.extend(generate_adversarial_texts(
@@ -720,7 +720,7 @@ if __name__ == '__main__':
         if not os.path.exists(negative_test_output_dir):
             os.mkdir(negative_test_output_dir)
         n_current_samples = len(os.listdir(negative_test_output_dir))
-        if n_current_samples <= 0.95*config["n_samples_val"]:
+        if n_current_samples-3 < config["n_samples_val"]:
             adversarial_texts = config["custom_negative_phrases"]
             for target_phrase in config["target_phrase"]:
                 adversarial_texts.extend(generate_adversarial_texts(
