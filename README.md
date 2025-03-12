@@ -1,3 +1,5 @@
+    Try to make openWakeWord to train mono-syllable wake word
+
 ![Github CI](https://github.com/dscripka/openWakeWord/actions/workflows/tests.yml/badge.svg)
 
 # openWakeWord
