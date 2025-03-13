@@ -4,7 +4,7 @@
     after finished training and donwloaded model files:
     $ git clone https://github.com/diyism/openWakeWord
     $ cd openWakeWord
-    $ pip install -e openwakeword
+    $ pip install ./
     $ mv ~/Downloads/hay.tflite ~/.local/lib/python3.10/site-packages/openwakeword/resources/models/
     # if conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
     $ subl ~/.local/lib/python3.10/site-packages/openwakeword/__init__.py
