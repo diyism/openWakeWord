@@ -56,7 +56,8 @@ false_positive_validation_data_path: "./validation_set_features.npy"
 # clips for training due to the randomness intrinsic to the augmentation despite using
 # the same original synthetic generation. Can be a useful way to increase model robustness
 # without having to generate extremely large numbers of synthetic examples.
-augmentation_rounds: 1
+augmentation_rounds: 25
+augmentation_rounds_negative: 12
 
 # Paths to pre-computed openwakeword features for positive and negative data. Each file must be a saved
 # .npy array (see the example notebook on manually training new models for details on how to create these).
