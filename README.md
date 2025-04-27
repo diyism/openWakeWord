@@ -6,8 +6,9 @@
     $ cd openWakeWord
     $ pip install ./
     $ mv ~/Downloads/hay.tflite ~/.local/lib/python3.10/site-packages/openwakeword/resources/models/
-    # if conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
-    $ subl ~/.local/lib/python3.10/site-packages/openwakeword/__init__.py
+    # if in conda env: $ mv ~/Downloads/hay.tflite ~/miniconda3/lib/python3.10/site-packages/openwakeword/resources/models/
+    $ lite-xl ~/.local/lib/python3.10/site-packages/openwakeword/__init__.py
+    # if in conda env: $ lite-xl ~/miniconda3/lib/python3.10/site-packages/openwakeword/__init__.py
     # add following into __init__.py/MODELS:
     "1": {
         "model_path": os.path.join(os.path.dirname(os.path.abspath(__file__)), "resources/models/hay.tflite")
