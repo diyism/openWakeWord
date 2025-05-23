@@ -14,7 +14,8 @@ dir_cut_syl="/content/gdrive/MyDrive/ColabData/openWakeWord/cut_syl_data"
 
 !ls -al $dir_cut_syl | wc -l
 
-# sys.exit("Stopping to check dir_cut_syl contents") # 调试代码已注释
+#sys.exit("Stopping to check dir_cut_syl contents") # 调试代码已注释
+
 #====begin: mount /root/gdrive/MyDrive/ColabSingularity/sing_posix_boxes/env1
 !apt install fuse-posixovl
 !umount -f /content/sing_posix_boxes
@@ -37,7 +38,6 @@ if not venv_bin_path in original_path.split(os.pathsep):
     os.environ['PATH'] = f"{venv_bin_path}{os.pathsep}{original_path}"
 !type python
 #====end: mount /root/gdrive/MyDrive/ColabSingularity/sing_posix_boxes/env1
-
 
 # "Edit / Notebook settings / Omit code cell output when saving this notebook", then "File / Download / Download .ipynb"
 !rm -rf my_custom_model/hey*
@@ -369,7 +369,7 @@ if num_source_negative_files == 0:
         sampling_rate = 16000
         duration_ms = 50
         silence = np.zeros(int(sampling_rate * duration_ms / 1000), dtype=np.int16)
-        
+
         dummy_neg_train_file_path = os.path.join(neg_train_dir, "dummy_negative.wav")
         scipy.io.wavfile.write(dummy_neg_train_file_path, sampling_rate, silence)
         print(f"Dummy negative train file created: {dummy_neg_train_file_path}")
@@ -383,7 +383,7 @@ else:
     n_neg_train_target = math.ceil(num_source_negative_files * train_split_ratio)
     train_negative_source_files = all_source_negative_files[:n_neg_train_target]
     test_negative_source_files = all_source_negative_files[n_neg_train_target:]
-    
+
     print(f"Targeting {len(train_negative_source_files)} negative training files and {len(test_negative_source_files)} negative test files.")
 
     # --- 复制生成负训练集 ---
@@ -537,3 +537,4 @@ from google.colab import files
 
 files.download(f"my_custom_model/{config['model_name']}.onnx")
 files.download(f"my_custom_model/{config['model_name']}.tflite")
+
